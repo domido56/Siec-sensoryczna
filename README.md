@@ -1,81 +1,66 @@
-# Maksymalizacja czasu życia sieci sensorowej za pomocą metody metaheurystycznej: algorytm genetyczny
-
-## Specyfikacja wymagań
-Cel projektu:
-Celem projektu jest maksymalizacja czasu życia sieci sensorowej przy użyciu algorytmu genetycznego.
-
-Opis problemu:
-Sieć sensorowa składająca się z określonej liczby sensorów i celów, gdzie sensory mają ograniczoną baterię i określony zasięg. Celem jest maksymalne pokrycie celów przy minimalnym zużyciu energii.
-
-Wymagania funkcjonalne:
-- Implementacja algorytmu genetycznego. 
-- Wizualizacja sieci sensorowej w GUI. 
-- Wyświetlanie zasięgu działania sensorów. 
-- Wyświetlanie stanu baterii sensorów. 
-- Automatyczne zatrzymanie symulacji po wyczerpaniu baterii sensorów. 
-
-Wymagania niefunkcjonalne: 
-- System powinien działać płynnie i efektywnie. 
-- Interfejs powinien być intuicyjny i łatwy w obsłudze. 
-- System powinien działać stabilnie i być odporny na błędy.
-
-## Architektura systemu
-Opis struktury systemu:
-Program składa się z trzech głównych modułów: main.py, sieci_sensorow.py oraz 
-alg_genetyczny.py. 
-
-Moduł ‘main.py’: 
-Jest odpowiedzialny za uruchomienie aplikacji. Pobiera od użytkownika zasięg 
-sensorów za pomocą ‘simpledialog’. Inicjalizuje sieci sensorów z określoną liczbą 
-celów, sensorów, zasięgiem oraz pojemnością baterii. Uruchamia algorytm genetyczny, 
-wyświetla współrzędne aktywnych sensorów oraz uruchamia interfejs graficzny (GUI). 
-
-Moduł ‘sieci_sensorow.py’: 
-Zajmuje się reprezentacją sieci sensorów (klasa SensorNetwork) oraz oceną 
-sprawności rozwiązań. Składa się z funkcji: 
-- ‘__init__’: inicjalizuje sieć z określoną liczbą celów, sensorów, zasięgiem oraz 
-pojemnością baterii.
-- ‘fitness’: oblicza sprawność danego rozwiązania (uwzględniając pokrycie celów 
-i zużycie baterii).
-- ‘evaluate_fitness_components’: ocenia komponenty sprawności dla danego 
-rozwiązania, takie jak pokrycie celów i zużycie baterii.
-- ‘minimize_active_sensors’: minimalizuje liczbę aktywnych sensorów 
-(optymalizuje rozwiązanie).
-- ‘calculate_coverage’: oblicza pokrycie celów przez aktywne sensory.
-  
-Moduł ‘alg_genetyczny.py’: Zawiera implementację algorytmu genetycznego. Składa się z klasy GeneticAlgorithm i 
-takich funkcji jak: 
-- ‘__init__’: inicjalizuje algorytm z określonymi parametrami.
-- ‘evolve’: przeprowadza proces ewolucji przez określoną liczbę generacji, 
-oceniając sprawność rozwiązań, dokonując: selekcji, krzyżowania oraz mutacji 
-populacji.
-- ‘plot_coverage_over_time’: rysuje wykres - zmianę pokrycia w czasie.
-- ‘selection’: realizuje selekcję rozwiązań na podstawie ich sprawności. 
-- ‘crossover’: realizuje krzyżowanie rozwiązań w celu generowania potomstwa. 
-- ‘mutate’: wprowadza mutacje do populacji, żeby zapewnić różnorodność 
-rozwiązań.
-
-Moduł ‘guii.py’: 
-Zajmuje się interfejsem graficznym aplikacji. Składa się z klasy SensorNetworkApp i 
-takich funkcji jak: 
-- ‘__init__’: inicjalizuje interfejs, tworzy przyciski i rysuje sieć sensorów.
-- ‘draw_buttons’: tworzy przyciski do sterowania symulacją. 
-- ‘draw_legend’: rysuje legendę. 
-- ‘draw_network_with_ranges’: rysuje sieć sensorów z zasięgami. 
-- ‘draw_network_with_battery’: rysuje sieć sensorów ze stanem baterii. 
-- ‘draw_grid’: rysuje siatkę. 
-- ‘update_simulation’: aktualizuje stan symulacji. 
-- ‘start_simulation’: rozpoczyna symulację. 
-- ‘stop_simulation’: zatrzymuje symulację. 
-
-Integracja systemu: 
-1. ‘main.py’ inicjalizuje sieć sensorów i uruchamia algorytm genetyczny. 
-2. ‘alg_genetyczny.py’ ewoluuje populację rozwiązań, oceniając je za pomocą 
-metod z modułu ‘sieci_sensorow.py’. 
-3. ‘guii.py’ wizualizuje sieć sensorów i umożliwia użytkownikowi interakcję z 
+# Maksymalizacja czasu życia sieci sensorowej – algorytm genetyczny
+Projekt implementuje algorytm genetyczny do optymalizacji czasu życia sieci sensorowej. System maksymalizuje pokrycie celów przy minimalnym zużyciu energii sensorów.
+## Opis problemu
+Sieć sensorowa składa się z określonej liczby sensorów i celów. Sensory mają ograniczoną baterię i zasięg działania. Algorytm genetyczny szuka optymalnego rozwiązania – które sensory aktywować, aby pokryć wszystkie cele jak najdłużej.
+## Funkcjonalności
+- Algorytm genetyczny z selekcją, krzyżowaniem i mutacją
+- Wizualizacja sieci sensorowej w GUI (Tkinter)
+- Wyświetlanie zasięgu działania sensorów
+- Monitoring stanu baterii w czasie rzeczywistym
+- Wykres sprawności pokrycia w czasie
+- Automatyczne zatrzymanie po wyczerpaniu baterii
+## Struktura projektu
+1. main.py inicjalizuje sieć sensorów i uruchamia algorytm genetyczny.
+2. sieci_sensorow.py reprezentuje sieci i funkcje fitness
+3. alg_genetyczny.py ewoluuje populację rozwiązań, oceniając je za pomocą 
+metod z modułu sieci_sensorow.py. 
+4. guii.py wizualizuje sieć sensorów i umożliwia użytkownikowi interakcję z 
 symulacją.
 
 ## Diagramy
 Diagramy przypadków użycia:
+<img width="745" height="270" alt="diag p uz" src="https://github.com/user-attachments/assets/e117b752-120b-48bc-97fa-04f3cfd9c220" />
+<img width="371" height="527" alt="diag p uz2" src="https://github.com/user-attachments/assets/92c91606-ff49-4a94-9047-78477acb5435" />
 
 Diagram klas:
+<img width="927" height="510" alt="diag kl" src="https://github.com/user-attachments/assets/218d4d30-f6b9-43ed-b924-97b4d36aef62" />
+
+## Instalacja
+### Wymagania
+- Python 3.x
+- matplotlib
+- numpy
+### Instalacja bibliotek
+```bash
+pip install matplotlib numpy
+```
+## Uruchomienie programu
+Wpisz w wkonsoli: python main.py
+
+## Korzystanie z programu
+### Konfiguracja symulacji
+Po uruchomieniu pojawią się okna dialogowe. Wprowadź dane (sugerowane wartości):
+- Liczba celów: 10 - 20
+- Liczba sensorów: 50 - 90
+- Zasięg sensora: 30 - 50
+### Korzystanie z interfejsu
+- Kliknij "Pokaż zasięgi", aby zobaczyć promienie działania aktywnych urządzeń.
+- Kliknij "Pokaż stan baterii", aby zobaczyć procentowe naładowanie nad sensorami.
+- Kliknij "Zatrzymaj symulację", aby przerwać obliczenia.
+
+## Przykładowe wyniki (Testy)
+###Test 1: 
+Liczba celów: 10 
+Liczba sensorów: 50 
+Zasięg sensora: 30 
+<img width="755" height="406" alt="test1" src="https://github.com/user-attachments/assets/5d6a2400-aca3-4566-b495-2212017e2ae6" />
+
+Pomimo tego, że algorytm dąży do najlepszych rozwiązań, przypadkowe mutacje, które niekoniecznie są korzystne, zdarzają się. Jednakże, algorytm szybko naprawia swoje błędy, co widać na wykresie. Po serii nieudanych rozwiązań, algorytm ustala się ponownie dla pokrycia 100%. 
+
+###Test 2: 
+Liczba celów: 15 
+Liczba sensorów: 50 
+Zasięg sensora: 50
+<img width="755" height="402" alt="test2" src="https://github.com/user-attachments/assets/e01781c7-1595-48b1-b35b-7e3e91c8f860" />
+
+Sensory działały w miarę poprawnie. Na wykresie widać, że raz sensor, który miał w swoim zasięgu cel, wszedł w stan uśpienia. Może być to spowodowane nieustannym szukaniem dobrego rozwiązania. 
