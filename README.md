@@ -20,6 +20,7 @@ symulacją.
 ## Diagramy
 Diagramy przypadków użycia:
 <img width="745" height="270" alt="diag p uz" src="https://github.com/user-attachments/assets/e117b752-120b-48bc-97fa-04f3cfd9c220" />
+
 <img width="371" height="527" alt="diag p uz2" src="https://github.com/user-attachments/assets/92c91606-ff49-4a94-9047-78477acb5435" />
 
 Diagram klas:
@@ -35,7 +36,7 @@ Diagram klas:
 pip install matplotlib numpy
 ```
 ## Uruchomienie programu
-Wpisz w wkonsoli: python main.py
+Wpisz w konsoli: python main.py
 
 ## Korzystanie z programu
 ### Konfiguracja symulacji
@@ -49,7 +50,7 @@ Po uruchomieniu pojawią się okna dialogowe. Wprowadź dane (sugerowane wartoś
 - Kliknij "Zatrzymaj symulację", aby przerwać obliczenia.
 
 ## Przykładowe wyniki (Testy)
-###Test 1: 
+### Test 1: 
 Liczba celów: 10 
 Liczba sensorów: 50 
 Zasięg sensora: 30 
@@ -57,7 +58,7 @@ Zasięg sensora: 30
 
 Pomimo tego, że algorytm dąży do najlepszych rozwiązań, przypadkowe mutacje, które niekoniecznie są korzystne, zdarzają się. Jednakże, algorytm szybko naprawia swoje błędy, co widać na wykresie. Po serii nieudanych rozwiązań, algorytm ustala się ponownie dla pokrycia 100%. 
 
-###Test 2: 
+### Test 2: 
 Liczba celów: 15 
 Liczba sensorów: 50 
 Zasięg sensora: 50
