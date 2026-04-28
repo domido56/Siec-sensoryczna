@@ -51,17 +51,17 @@ Po uruchomieniu pojawią się okna dialogowe. Wprowadź dane (sugerowane wartoś
 
 ## Przykładowe wyniki (Testy)
 ### Test 1: 
-Liczba celów: 10 
-Liczba sensorów: 50 
-Zasięg sensora: 30 
+- Liczba celów: 10 
+- Liczba sensorów: 50 
+- Zasięg sensora: 30 
 <img width="755" height="406" alt="test1" src="https://github.com/user-attachments/assets/5d6a2400-aca3-4566-b495-2212017e2ae6" />
 
 Pomimo tego, że algorytm dąży do najlepszych rozwiązań, przypadkowe mutacje, które niekoniecznie są korzystne, zdarzają się. Jednakże, algorytm szybko naprawia swoje błędy, co widać na wykresie. Po serii nieudanych rozwiązań, algorytm ustala się ponownie dla pokrycia 100%. 
 
 ### Test 2: 
-Liczba celów: 15 
-Liczba sensorów: 50 
-Zasięg sensora: 50
+- Liczba celów: 15 
+- Liczba sensorów: 50 
+- Zasięg sensora: 50
 <img width="755" height="402" alt="test2" src="https://github.com/user-attachments/assets/e01781c7-1595-48b1-b35b-7e3e91c8f860" />
 
 Sensory działały w miarę poprawnie. Na wykresie widać, że raz sensor, który miał w swoim zasięgu cel, wszedł w stan uśpienia. Może być to spowodowane nieustannym szukaniem dobrego rozwiązania. 
